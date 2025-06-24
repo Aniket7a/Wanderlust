@@ -157,6 +157,8 @@ app.get("/signup",(req,res)=>{
 })
 
 app.post("/signup",async(req,res)=>{
+   console.log("🔥 POST /signup hit");
+  console.log("📦 req.body =", req.body);
   try{
     let{username , email , password} = req.body
   const newUser = new User ({email,username})
