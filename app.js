@@ -46,7 +46,7 @@ store.on("error",(err)=>{
 })
 
 
-
+const isProduction = process.env.NODE_ENV === 'production'; // Add this line
 
 const sessionOption ={
   store ,
@@ -56,7 +56,10 @@ const sessionOption ={
  cookie : {
    expires :Date.now() + 7 * 24 * 60 * 60 * 1000,
    maxAge :  7 * 24 * 60 * 60 * 1000,
-   httpOnly : true
+   httpOnly : true,
+    secure: isProduction, // Critical for HTTPS
+    sameSite: isProduction ? 'none' : 'lax' // Required for cross-site cookies
+   
  }
 }
 
