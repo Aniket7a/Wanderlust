@@ -6,7 +6,10 @@ require('dotenv').config();
 
 const express = require('express')
 const app = express()
-const port = 3030
+app.set("trust proxy", 1);
+
+const port = process.env.PORT || 3030;
+
 const mongoose = require('mongoose');
 const Listing = require("./models/listing.js")
 const path  = require("path")
