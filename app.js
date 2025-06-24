@@ -119,6 +119,9 @@ app.get("/logout",(req,res,next)=>{
 
 
 
+app.get("/", (req, res) => {
+  res.redirect("/listings"); // or render a home page like "home.ejs"
+});
 
 
 
