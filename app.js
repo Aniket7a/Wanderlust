@@ -3,9 +3,9 @@ require('dotenv').config();
 
 
 
-const app = express()
-const express = require('express')
 
+const express = require('express')
+const app = express()
 const port = 3030
 const mongoose = require('mongoose');
 const Listing = require("./models/listing.js")
