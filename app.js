@@ -1,13 +1,5 @@
 require('dotenv').config();
 
-if (process.env.NODE_ENV === "production") {
-  app.use((req, res, next) => {
-    if (req.headers["x-forwarded-proto"] !== "https") {
-      return res.redirect("https://" + req.headers.host + req.url);
-    }
-    next();
-  });
-}
 
 
 
@@ -162,7 +154,6 @@ app.get("/signup",(req,res)=>{
 })
 
 app.post("/signup",async(req,res)=>{
-  console.log("📦 Form data received at /signup:", req.body);
   try{
     let{username , email , password} = req.body
   const newUser = new User ({email,username})
