@@ -161,6 +161,7 @@ app.post("/signup",async(req,res)=>{
   console.log("📦 req.body =", req.body);
   try{
     let{username , email , password} = req.body
+      console.log("📩 Signup Request Received:", username, email);
   const newUser = new User ({email,username})
   const registeredUser = await User.register(newUser , password)
   // console.log(registeredUser);
